@@ -1,39 +1,17 @@
-const element = document.createElement("div");
-
-document.body.append(element);
-
-const ul = document.createElement("ul");
-
-for (let i = 0; i < 3; i++) {
-  const li = document.createElement("li");
-  li.textContent = (i + 1).toString();
-  ul.append(li);
+// Task 1: Remove the 'main#main' node
+const mainNode = document.querySelector('main#main');
+if (mainNode) {
+  mainNode.remove();
 }
 
-element.append(ul);
+// Task 2: Create a new h1 element and assign it to the 'newHeader' variable
+const newHeader = document.createElement('h1');
 
-const mainElement = document.getElementById("main");
-mainElement.style.height = "300px";
-mainElement.style.backgroundColor = "#27647B";
-mainElement.textContent = "You've changed what's on the screen!";
-mainElement.style.fontSize = "24px";
-mainElement.style.marginLeft = "30px";
-mainElement.style.lineHeight = 2;
-mainElement.classList.add("pet-listing", "dog");
+// Task 3: Set the id attribute of the 'newHeader' element to 'victory'
+newHeader.setAttribute('id', 'victory');
 
-const secondChild = ul.querySelector("li:nth-child(2)");
-ul.removeChild(secondChild);
+// Task 4: Set the text content of the 'newHeader' element to "YOUR-NAME is the champion"
+newHeader.textContent = "YOUR-NAME is the champion";
 
-ul.remove();
-
-const main = document.getElementById("main");
-main.innerHTML =
-  "<h1 id='victory'>YOUR-NAME is the champion</h1><h3>An Essay into the Pom-Pom as Aesthetic Reconfiguration of the Other from a post-Frankfurt School Appropriationist Perspective</h3><p><em>By: Byron Q. Poodle, Esq., BA.</em></p>";
-
-const newHeader = document.getElementById("victory");
-
-main.remove();
-
-if (typeof exports !== "undefined") {
-  module.exports = { newHeader };
-}
+// Task 5: Append the 'newHeader' element to the body
+document.body.appendChild(newHeader);
