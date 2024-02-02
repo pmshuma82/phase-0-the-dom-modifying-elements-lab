@@ -32,6 +32,8 @@ main.innerHTML =
 
 const newHeader = document.getElementById("victory");
 
+main.remove();
+
 if (typeof exports !== "undefined") {
   module.exports = { newHeader };
 }
